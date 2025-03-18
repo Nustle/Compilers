@@ -1,0 +1,4 @@
+whiled -- 10 wend -- cool
+wend while 10 ab10
+10whilewend --&61264a-
+33< while <= 10 wend
