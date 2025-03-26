@@ -11,7 +11,8 @@ unique_ptr<Token> Scanner::NextToken() {
     bool isStringConst = false;
     Position startStringConst = curr;
     Position followingStringConst = curr;
-    string valStringConst;
+    string valStringConst = "";
+    string asciiValChar = "";
 
     while (curr.Cp() != -1) {
         while (curr.IsWhiteSpace() && !isStringConst) {
@@ -19,7 +20,6 @@ unique_ptr<Token> Scanner::NextToken() {
         }
 
         Position start = curr;
-        Position startStringConstVal = curr;
 
         if (!isStringConst) {
             startStringConst = curr;
@@ -28,13 +28,19 @@ unique_ptr<Token> Scanner::NextToken() {
         switch (start.Cp()) {
             case '\'':
                 curr++;
-                startStringConstVal++;
                 isStringConst = true;
+
                 while (curr.Cp() != -1 && !(curr.Cp() == '\'' && curr.Np() != '\'' && curr.Pp() != '\'')) {
+                    if (!(curr.Cp() == '\'' && curr.Pp() == '\'')) {
+                        valStringConst += Program[curr.Index()];
+                    }
                     if (curr.IsNewLine()) {
                         compiler->AddMessage(curr, "end of line found, expected: '");
                         curr = start;
                         isStringConst = false;
+                        // ~
+                        valStringConst = "";
+                        // ~
                         break;
                     }
                     if (curr.Cp() == '\'' && curr.Np() != '\'' && curr.Pp() == '\'') {
@@ -48,18 +54,12 @@ unique_ptr<Token> Scanner::NextToken() {
                     }
                     curr++;
                 }
+
                 followingStringConst = curr++;
-                if (isStringConst) {
-                    valStringConst += Program.substr (
-                            startStringConstVal.Index(),
-                            followingStringConst.Index() - startStringConstVal.Index() - 1
-                    );
-                }
                 break;
             case '#':
                 curr++;
                 isStringConst = true;
-
                 if (!curr.IsDigit()) {
                     compiler->AddMessage(curr, "after # must be digit");
                     isStringConst = false;
@@ -68,14 +68,13 @@ unique_ptr<Token> Scanner::NextToken() {
                 }
 
                 while (curr.IsDigit()) {
+                    asciiValChar += Program[curr.Index()];
                     curr++;
                 }
-                followingStringConst = curr;
 
-                valStringConst += Program.substr (
-                        startStringConstVal.Index(),
-                        followingStringConst.Index() - startStringConstVal.Index()
-                );
+                followingStringConst = curr;
+                valStringConst += static_cast<char>(stoi(asciiValChar));;
+                asciiValChar = "";
                 break;
             default:
                 if (isStringConst) {
