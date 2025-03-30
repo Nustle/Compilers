@@ -1,0 +1,2 @@
+movc EAX ^ closer 11
+0F5h 77 mov mov closer
