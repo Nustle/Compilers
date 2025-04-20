@@ -1,0 +1,26 @@
+Program → Defs Funcs
+Defs → Def*
+Def → type IdentDef : AlgType (| AlgType)*.
+AlgType → Ident Type*
+
+Type → Int | IdentDef
+
+Funcs → FunDef*
+FunDef       → fun FunSignature : Clauses .
+FunSignature → ( Ident Type* ) → Type
+Clauses      → Clause (| Clause)*
+Clause       → FunctionPattern -> Expression
+
+FunctionPattern → ( Ident Pattern* )
+Pattern         → Ident
+                | ConstructorPattern
+
+ConstructorPattern → [ Ident Pattern* ]
+
+Expression     → Ident
+               | INT_CONST
+               | FunctionCall
+               | ConstructorCall
+
+FunctionCall    → ( Ident Expression* )
+ConstructorCall → [ Ident Expression* ]
