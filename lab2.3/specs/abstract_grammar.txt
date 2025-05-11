@@ -1,0 +1,8 @@
+Program ::= Declaration Rule*
+Declaration ::= NONTERMINAL_DECL (, NONTERMINAL_DECL)*
+NONTERMINAL_DECL ::= NONTERMINAL | { NONTERMINAL }
+Rule ::= < NONTERMINAL Alternatives >
+Alternatives ::= Alternative+
+Alternative ::= : Term+
+Term ::= NONTERMINAL | TERMINAL | @
+

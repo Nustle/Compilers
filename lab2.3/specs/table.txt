@@ -1,0 +1,28 @@
+                | NONTERMINAL                  | TERMINAL    | COLON                     | LEFT_BRACE                         | RIGHT_BRACE |
+Program         | Declaration Rules            |             |                           | Declaration Rules                  |             |
+Declaration     | NonterminalDecl Declaration1 |             |                           | NonterminalDecl Declaration1       |             |
+Rules           |                              |             |                           |                                    |             |
+NonterminalDecl | NONTERMINAL                  |             |                           | LEFT_BRACE NONTERMINAL RIGHT_BRACE |             |
+Declaration1    |                              |             |                           |                                    |             |
+Rule            |                              |             |                           |                                    |             |
+Alternatives    |                              |             | Alternative Alternatives1 |                                    |             |
+Alternatives1   |                              |             | Alternatives              |                                    |             |
+Alternative     |                              |             | COLON Terms               |                                    |             |
+Terms           | Term Terms1                  | Term Terms1 |                           |                                    |             |
+Terms1          | Terms                        | Terms       | ε                         |                                    |             |
+Term            | NONTERMINAL                  | TERMINAL    |                           |                                    |             |
+
+
+                | LEFT_ANGLE                                      | RIGHT_ANGLE | EPS         | COMMA                              | $      |
+Program         |                                                 |             |             |                                    |        |
+Declaration     |                                                 |             |             |                                    |        |
+Rules           | Rule Rules                                      |             |             |                                    | ε      |
+NonterminalDecl |                                                 |             |             |                                    |        |
+Declaration1    | ε                                               |             |             | COMMA NonterminalDecl Declaration1 | ε      |
+Rule            | LEFT_ANGLE NONTERMINAL Alternatives RIGHT_ANGLE |             |             |                                    |        |
+Alternatives    |                                                 |             |             |                                    |        |
+Alternatives1   |                                                 | ε           |             |                                    |        |
+Alternative     |                                                 |             |             |                                    |        |
+Terms           |                                                 |             | Term Terms1 |                                    |        |
+Terms1          |                                                 | ε           | Terms       |                                    |        |
+Term            |                                                 |             | EPS         |                                    |        |

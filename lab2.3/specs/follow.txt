@@ -1,0 +1,12 @@
+Follow(Term) = {:, >, @, n, t}
+Follow(Rules) = {$}
+Follow(Program) = {$}
+Follow(Terms1) = {:, >}
+Follow(Alternatives) = {>}
+Follow(Alternative) = {:, >}
+Follow(NonterminalDecl) = {$, ,, <}
+Follow(Declaration) = {$, <}
+Follow(Terms) = {:, >}
+Follow(Alternatives1) = {>}
+Follow(Declaration1) = {$, <}
+Follow(Rule) = {$, <}

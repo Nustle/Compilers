@@ -1,0 +1,12 @@
+First(Term) = {@, n, t}
+First(Rules) = {<, ε}
+First(Program) = {n, {}
+First(Terms1) = {@, n, t, ε}
+First(Alternatives) = {:}
+First(Alternative) = {:}
+First(NonterminalDecl) = {n, {}
+First(Declaration) = {n, {}
+First(Terms) = {@, n, t}
+First(Alternatives1) = {:, ε}
+First(Declaration1) = {,, ε}
+First(Rule) = {<}
