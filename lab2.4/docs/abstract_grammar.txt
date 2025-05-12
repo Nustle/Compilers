@@ -1,0 +1,45 @@
+Program ->  Functions Statements
+Functions -> Function*
+Function -> FUNCTION VarDef ( FunctionParams ) Statements END FUNCTION
+	        | SUB VARNAME ( FunctionParams ) Statements END SUB
+FunctionParams -> FunctionParams , Expr | Expr | ε
+VarDef -> VARNAME Type
+Type -> % | & | ! | # | $
+Statements -> Statement*
+Statement -> AssignStatement | IfStatement | IfElseStatement
+           | WhileStatement | ForStatement | DimStatement
+AssignStatement -> Factor = Expr
+IfStatement -> IF Expr THEN Statements END IF
+IfElseStatement -> IF Expr THEN Statements ELSE Statements END IF
+WhileStatement -> DO WHILE Expr Statements LOOP
+		        | DO UNTIL Expr Statements LOOP
+		        | DO Statements LOOP WHILE Expr
+		        | DO Statements LOOP UNTIL Expr
+		        | DO Statements LOOP
+ForStatement -> FOR VarDef = Expr TO Expr Statements NEXT VarDef
+DimStatement -> DIM Factor
+Expr -> ArithmExpr
+      | ArithmExpr > ArithmExpr
+      | ArithmExpr < ArithmExpr
+      | ArithmExpr >= ArithmExpr
+      | ArithmExpr <= ArithmExpr
+      | ArithmExpr == ArithmExpr
+      | ArithmExpr <> ArithmExpr
+ArithmExpr -> Term
+	    | + Term
+	    | - Term
+	    | ArithmExpr + Term
+	    | ArithmExpr - Term
+	    | ArithmExpr OR Term
+Term -> Factor
+      | Term * Factor
+      | Term / Factor
+      | Term AND Factor
+Factor -> NOT Factor
+       | VarDef ( FunctionParams )
+       | VARNAME ( FunctionParams )
+       | VarDef [ Expr ]
+       | VarDef
+       | Const
+       | ( Expr )
+Const -> INT_CONST | LONG_CONST | FLOAT_CONST | DOUBLE_CONST | STRING_CONST

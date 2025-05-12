@@ -1,0 +1,31 @@
+WHITESPACE ::= [ \t\r\n]
+COMMENT ::= '[^\n]*
+LEFT_PAREN ::= (
+RIGHT_PAREN ::= )
+LEFT_BRACKET ::= [
+RIGHT_BRACKET ::= ]
+COMMA ::= ,
+ASSIGN ::= =
+TYPE ::= % | & | ! | # | $
+PLUS ::= +
+MINUS ::= -
+MUL_OP ::= * | /
+REL_OP ::= > | < | >= | <= | == | <>
+IDENT ::= [A-Za-z][A-Za-z0-9]*
+KFunction ::= Function
+KEnd ::= End
+KSub ::= Sub
+KIf ::= If
+KThen ::= Then
+KElse ::= Else
+KDo ::= Do
+KWhile ::= While
+KLoop ::= Loop
+KUntil ::= Until
+KFor ::= For
+KDim ::= Dim
+KTo ::= To
+KNext ::= Next
+INT_CONST ::= [0-9]+
+REAL_CONST ::= [0-9]+\.[0-9]+
+STRING_CONST ::= "([^\n"])"

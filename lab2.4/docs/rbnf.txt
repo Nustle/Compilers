@@ -1,0 +1,45 @@
+Program ::= Function* Statements
+
+Function ::= 'Function' VarDef '(' Params? ')' Statements 'End' 'Function'
+          |  'Sub' IDENT '(' Params? ')' Statements 'End' 'Sub'
+
+Params ::= Expr (',' Expr)*
+
+VarDef ::= IDENT Type
+Type ::= '%' | '&' | '!' | '#' | '$'
+
+Statements ::= Statement*
+
+Statement ::= AssignStmt
+           |  IfStmt
+           |  WhileStmt
+           |  ForStmt
+           |  DimStmt
+
+AssignStmt ::= Factor '=' Expr
+
+IfStmt ::= 'If' Expr 'Then' Statements ('Else' Statements)? 'End' 'If'
+
+WhileStmt ::= 'Do' ( 'While' Expr  Statements 'Loop'
+                   | 'Until' Expr  Statements 'Loop'
+                   |  Statements 'Loop' 'While' Expr
+                   |  Statements 'Loop' 'Until' Expr
+                   |  Statements 'Loop' )
+
+ForStmt ::= 'For' VarDef '=' Expr 'To' Expr Statements 'Next' VarDef
+DimStmt ::= 'Dim' Factor
+
+Expr ::= ArithmExpr ( RelOp ArithmExpr )?
+RelOp ::= '>' | '<' | '>=' | '<=' | '==' | '<>'
+
+ArithmExpr ::= ('+' | '-')? Term ( AddOp Term )*
+AddOp ::= '+' | '-'
+
+Term ::= Factor ( MulOp Factor )*
+MulOp ::= '*' | '/'
+
+Factor ::= IDENT Type? ('(' Params? ')' | '[' Expr ']')?
+         | Const
+         | '(' Expr ')'
+
+Const ::= INT_CONST | REAL_CONST | STRING_CONST
