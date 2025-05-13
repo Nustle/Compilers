@@ -1,0 +1,940 @@
+{
+  "functions": [
+    {
+      "kind": "function",
+      "name": "SumArray",
+      "ret_mark": "#",
+      "params": [
+        {
+          "kind": "call",
+          "name": "Values",
+          "args": []
+        }
+      ],
+      "body": [
+        {
+          "kind": "assign",
+          "lhs": [
+            [
+              "kind",
+              "var"
+            ],
+            [
+              "name",
+              "SumArray",
+              [
+                "type",
+                "#"
+              ]
+            ]
+          ],
+          "rhs": {
+            "kind": "int",
+            "value": 0
+          }
+        },
+        {
+          "kind": "for",
+          "var": "i",
+          "from": {
+            "kind": "int",
+            "value": 1
+          },
+          "to": {
+            "kind": "call",
+            "name": "Len",
+            "args": [
+              [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "Values",
+                  [
+                    "type",
+                    "#"
+                  ]
+                ]
+              ]
+            ]
+          },
+          "body": [
+            {
+              "kind": "assign",
+              "lhs": [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "SumArray",
+                  [
+                    "type",
+                    "#"
+                  ]
+                ]
+              ],
+              "rhs": {
+                "kind": "binary",
+                "op": "+",
+                "lhs": [
+                  [
+                    "kind",
+                    "var"
+                  ],
+                  [
+                    "name",
+                    "SumArray",
+                    [
+                      "type",
+                      "#"
+                    ]
+                  ]
+                ],
+                "rhs": {
+                  "kind": "call",
+                  "name": "Values",
+                  "args": [
+                    [
+                      [
+                        "kind",
+                        "var"
+                      ],
+                      [
+                        "name",
+                        "i",
+                        [
+                          "type",
+                          "%"
+                        ]
+                      ]
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "function",
+      "name": "Polynom",
+      "ret_mark": "!",
+      "params": [
+        [
+          [
+            "kind",
+            "var"
+          ],
+          [
+            "name",
+            "x",
+            [
+              "type",
+              "!"
+            ]
+          ]
+        ],
+        {
+          "kind": "call",
+          "name": "coefs",
+          "args": []
+        }
+      ],
+      "body": [
+        {
+          "kind": "assign",
+          "lhs": [
+            [
+              "kind",
+              "var"
+            ],
+            [
+              "name",
+              "Polynom",
+              [
+                "type",
+                "!"
+              ]
+            ]
+          ],
+          "rhs": {
+            "kind": "int",
+            "value": 0
+          }
+        },
+        {
+          "kind": "for",
+          "var": "i",
+          "from": {
+            "kind": "int",
+            "value": 1
+          },
+          "to": {
+            "kind": "call",
+            "name": "Len",
+            "args": [
+              [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "coefs",
+                  [
+                    "type",
+                    "!"
+                  ]
+                ]
+              ]
+            ]
+          },
+          "body": [
+            {
+              "kind": "assign",
+              "lhs": [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "Polynom",
+                  [
+                    "type",
+                    "!"
+                  ]
+                ]
+              ],
+              "rhs": {
+                "kind": "binary",
+                "op": "+",
+                "lhs": {
+                  "kind": "binary",
+                  "op": "*",
+                  "lhs": [
+                    [
+                      "kind",
+                      "var"
+                    ],
+                    [
+                      "name",
+                      "Polynom",
+                      [
+                        "type",
+                        "!"
+                      ]
+                    ]
+                  ],
+                  "rhs": [
+                    [
+                      "kind",
+                      "var"
+                    ],
+                    [
+                      "name",
+                      "x",
+                      [
+                        "type",
+                        "!"
+                      ]
+                    ]
+                  ]
+                },
+                "rhs": {
+                  "kind": "call",
+                  "name": "coefs",
+                  "args": [
+                    [
+                      [
+                        "kind",
+                        "var"
+                      ],
+                      [
+                        "name",
+                        "i",
+                        [
+                          "type",
+                          "%"
+                        ]
+                      ]
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "function",
+      "name": "Polynom1111",
+      "ret_mark": "!",
+      "params": [
+        [
+          [
+            "kind",
+            "var"
+          ],
+          [
+            "name",
+            "x",
+            [
+              "type",
+              "!"
+            ]
+          ]
+        ]
+      ],
+      "body": [
+        {
+          "kind": "dim",
+          "var": {
+            "kind": "call",
+            "name": "coefs",
+            "args": [
+              {
+                "kind": "int",
+                "value": 4
+              }
+            ]
+          }
+        },
+        {
+          "kind": "for",
+          "var": "i",
+          "from": {
+            "kind": "int",
+            "value": 1
+          },
+          "to": {
+            "kind": "int",
+            "value": 4
+          },
+          "body": [
+            {
+              "kind": "assign",
+              "lhs": {
+                "kind": "call",
+                "name": "coefs",
+                "args": [
+                  [
+                    [
+                      "kind",
+                      "var"
+                    ],
+                    [
+                      "name",
+                      "i",
+                      [
+                        "type",
+                        "%"
+                      ]
+                    ]
+                  ]
+                ]
+              },
+              "rhs": {
+                "kind": "int",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "kind": "assign",
+          "lhs": [
+            [
+              "kind",
+              "var"
+            ],
+            [
+              "name",
+              "Polynom1111",
+              [
+                "type",
+                "!"
+              ]
+            ]
+          ],
+          "rhs": {
+            "kind": "call",
+            "name": "Polynom",
+            "args": [
+              [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "x",
+                  [
+                    "type",
+                    "!"
+                  ]
+                ]
+              ],
+              [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "coefs",
+                  [
+                    "type",
+                    "!"
+                  ]
+                ]
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "kind": "sub",
+      "name": "Fibonacci",
+      "ret_mark": "",
+      "params": [
+        {
+          "kind": "call",
+          "name": "res",
+          "args": []
+        }
+      ],
+      "body": [
+        {
+          "kind": "assign",
+          "lhs": [
+            [
+              "kind",
+              "var"
+            ],
+            [
+              "name",
+              "n",
+              [
+                "type",
+                "%"
+              ]
+            ]
+          ],
+          "rhs": {
+            "kind": "call",
+            "name": "Len",
+            "args": [
+              [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "res",
+                  [
+                    "type",
+                    "&"
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "if",
+          "cond": {
+            "kind": "binary",
+            "op": ">=",
+            "lhs": [
+              [
+                "kind",
+                "var"
+              ],
+              [
+                "name",
+                "n",
+                [
+                  "type",
+                  "%"
+                ]
+              ]
+            ],
+            "rhs": {
+              "kind": "int",
+              "value": 1
+            }
+          },
+          "then": [
+            {
+              "kind": "assign",
+              "lhs": {
+                "kind": "call",
+                "name": "res",
+                "args": [
+                  {
+                    "kind": "int",
+                    "value": 1
+                  }
+                ]
+              },
+              "rhs": {
+                "kind": "int",
+                "value": 1
+              }
+            }
+          ],
+          "else": []
+        },
+        {
+          "kind": "if",
+          "cond": {
+            "kind": "binary",
+            "op": ">=",
+            "lhs": [
+              [
+                "kind",
+                "var"
+              ],
+              [
+                "name",
+                "n",
+                [
+                  "type",
+                  "%"
+                ]
+              ]
+            ],
+            "rhs": {
+              "kind": "int",
+              "value": 2
+            }
+          },
+          "then": [
+            {
+              "kind": "assign",
+              "lhs": {
+                "kind": "call",
+                "name": "res",
+                "args": [
+                  {
+                    "kind": "int",
+                    "value": 2
+                  }
+                ]
+              },
+              "rhs": {
+                "kind": "int",
+                "value": 1
+              }
+            }
+          ],
+          "else": []
+        },
+        {
+          "kind": "assign",
+          "lhs": [
+            [
+              "kind",
+              "var"
+            ],
+            [
+              "name",
+              "i",
+              [
+                "type",
+                "%"
+              ]
+            ]
+          ],
+          "rhs": {
+            "kind": "int",
+            "value": 3
+          }
+        },
+        {
+          "kind": "while",
+          "pre_cond": false,
+          "until": false,
+          "cond": {
+            "kind": "binary",
+            "op": "<=",
+            "lhs": [
+              [
+                "kind",
+                "var"
+              ],
+              [
+                "name",
+                "i",
+                [
+                  "type",
+                  "%"
+                ]
+              ]
+            ],
+            "rhs": [
+              [
+                "kind",
+                "var"
+              ],
+              [
+                "name",
+                "n",
+                [
+                  "type",
+                  "%"
+                ]
+              ]
+            ]
+          },
+          "body": [
+            {
+              "kind": "assign",
+              "lhs": {
+                "kind": "call",
+                "name": "res",
+                "args": [
+                  [
+                    [
+                      "kind",
+                      "var"
+                    ],
+                    [
+                      "name",
+                      "i",
+                      [
+                        "type",
+                        "%"
+                      ]
+                    ]
+                  ]
+                ]
+              },
+              "rhs": {
+                "kind": "binary",
+                "op": "+",
+                "lhs": {
+                  "kind": "call",
+                  "name": "res",
+                  "args": [
+                    {
+                      "kind": "binary",
+                      "op": "-",
+                      "lhs": [
+                        [
+                          "kind",
+                          "var"
+                        ],
+                        [
+                          "name",
+                          "i",
+                          [
+                            "type",
+                            "%"
+                          ]
+                        ]
+                      ],
+                      "rhs": {
+                        "kind": "int",
+                        "value": 1
+                      }
+                    }
+                  ]
+                },
+                "rhs": {
+                  "kind": "call",
+                  "name": "res",
+                  "args": [
+                    {
+                      "kind": "binary",
+                      "op": "-",
+                      "lhs": [
+                        [
+                          "kind",
+                          "var"
+                        ],
+                        [
+                          "name",
+                          "i",
+                          [
+                            "type",
+                            "%"
+                          ]
+                        ]
+                      ],
+                      "rhs": {
+                        "kind": "int",
+                        "value": 2
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "kind": "assign",
+              "lhs": [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "i",
+                  [
+                    "type",
+                    "%"
+                  ]
+                ]
+              ],
+              "rhs": {
+                "kind": "binary",
+                "op": "+",
+                "lhs": [
+                  [
+                    "kind",
+                    "var"
+                  ],
+                  [
+                    "name",
+                    "i",
+                    [
+                      "type",
+                      "%"
+                    ]
+                  ]
+                ],
+                "rhs": {
+                  "kind": "int",
+                  "value": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "function",
+      "name": "Join",
+      "ret_mark": "$",
+      "params": [
+        [
+          [
+            "kind",
+            "var"
+          ],
+          [
+            "name",
+            "sep",
+            [
+              "type",
+              "$"
+            ]
+          ]
+        ],
+        {
+          "kind": "call",
+          "name": "items",
+          "args": []
+        }
+      ],
+      "body": [
+        {
+          "kind": "if",
+          "cond": {
+            "kind": "binary",
+            "op": ">=",
+            "lhs": {
+              "kind": "call",
+              "name": "Len",
+              "args": [
+                [
+                  [
+                    "kind",
+                    "var"
+                  ],
+                  [
+                    "name",
+                    "items",
+                    [
+                      "type",
+                      "$"
+                    ]
+                  ]
+                ]
+              ]
+            },
+            "rhs": {
+              "kind": "int",
+              "value": 1
+            }
+          },
+          "then": [
+            {
+              "kind": "assign",
+              "lhs": [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "Join",
+                  [
+                    "type",
+                    "$"
+                  ]
+                ]
+              ],
+              "rhs": {
+                "kind": "index",
+                "name": "items",
+                "index": {
+                  "kind": "int",
+                  "value": 1
+                }
+              }
+            }
+          ],
+          "else": [
+            {
+              "kind": "assign",
+              "lhs": [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "Join",
+                  [
+                    "type",
+                    "$"
+                  ]
+                ]
+              ],
+              "rhs": {
+                "kind": "string",
+                "value": "\"\""
+              }
+            }
+          ]
+        },
+        {
+          "kind": "for",
+          "var": "i",
+          "from": {
+            "kind": "int",
+            "value": 2
+          },
+          "to": {
+            "kind": "call",
+            "name": "Len",
+            "args": [
+              [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "items",
+                  [
+                    "type",
+                    "$"
+                  ]
+                ]
+              ]
+            ]
+          },
+          "body": [
+            {
+              "kind": "assign",
+              "lhs": [
+                [
+                  "kind",
+                  "var"
+                ],
+                [
+                  "name",
+                  "Join",
+                  [
+                    "type",
+                    "$"
+                  ]
+                ]
+              ],
+              "rhs": {
+                "kind": "binary",
+                "op": "+",
+                "lhs": {
+                  "kind": "binary",
+                  "op": "+",
+                  "lhs": [
+                    [
+                      "kind",
+                      "var"
+                    ],
+                    [
+                      "name",
+                      "Join",
+                      [
+                        "type",
+                        "$"
+                      ]
+                    ]
+                  ],
+                  "rhs": [
+                    [
+                      "kind",
+                      "var"
+                    ],
+                    [
+                      "name",
+                      "sep",
+                      [
+                        "type",
+                        "$"
+                      ]
+                    ]
+                  ]
+                },
+                "rhs": {
+                  "kind": "call",
+                  "name": "items",
+                  "args": [
+                    [
+                      [
+                        "kind",
+                        "var"
+                      ],
+                      [
+                        "name",
+                        "i",
+                        [
+                          "type",
+                          "%"
+                        ]
+                      ]
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "statements": []
+}
