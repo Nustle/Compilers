@@ -74,7 +74,10 @@ namespace parser {
         }
 
         Expect(lexer::DomainTag::LeftParen);
-        auto params = Params();
+        std::vector<std::unique_ptr<parser::Expr>> params;
+        if (sym->GetTag() == lexer::DomainTag::Plus || sym->GetTag() == lexer::DomainTag::Minus || sym->GetTag() == lexer::DomainTag::Ident) {
+            params = Params();
+        }
         Expect(lexer::DomainTag::RightParen);
 
         auto body = Statements();
@@ -84,8 +87,8 @@ namespace parser {
 
         return std::make_unique<parser::Function>(
                 is_sub,
-         std::move(func_name),
-          std::move(type_mark),
+                std::move(func_name),
+                std::move(type_mark),
                 std::move(params),
                 std::move(body)
         );
