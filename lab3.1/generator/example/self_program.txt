@@ -1,0 +1,15 @@
+-- самоописывающаяся грамматика
+-- лол
+{ Program }, Declaration, Rules, NonterminalDecl, Declaration1, Rule, Alternatives, Alternative, Alternatives1, Terms, Term, Terms1
+< Program : Declaration Rules >
+< Declaration : NonterminalDecl Declaration1 >
+< Declaration1 : "," NonterminalDecl Declaration1 : @ >
+< NonterminalDecl : "NonTerminal" : "{" "NonTerminal" "}" >
+< Rules : Rule Rules : @ >
+< Rule : "<" "NonTerminal" Alternatives ">" >
+< Alternatives : Alternative Alternatives1 >
+< Alternatives1 : Alternatives : @ >
+< Alternative : ":" Terms >
+< Terms : Term Terms1 >
+< Terms1 : Terms : @ >
+< Term : "Terminal" : "NonTerminal" : "@" >

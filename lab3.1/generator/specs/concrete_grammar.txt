@@ -1,0 +1,9 @@
+Program ::= Declaration Rules
+Declaration ::= NONTERMINAL_DECL | Declaration COMMA NONTERMINAL_DECL
+NONTERMINAL_DECL ::= NONTERMINAL | LEFT_BRACE NONTERMINAL RIGHT_BRACE
+Rules ::= Rule Rules | ε
+Rule ::= LEFT_ANGLE NONTERMINAL Alternatives RIGHT_ANGLE
+Alternatives ::= Alternative Alternatives | Alternative
+Alternative ::= COLON Terms
+Terms ::= Term Terms | Term
+Term ::= TERMINAL | NONTERMINAL | EPS

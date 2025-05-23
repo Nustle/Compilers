@@ -1,0 +1,340 @@
+digraph {
+  n0 [label="Program"]
+  n1 [label="Declaration"]
+  n0 -> n1
+  n2 [label="Rules"]
+  n0 -> n2
+  { rank=same; n1 -> n2 [style=invis]; }
+  n3 [label="NonterminalDecl"]
+  n1 -> n3
+  n4 [label="Declaration1"]
+  n1 -> n4
+  { rank=same; n3 -> n4 [style=invis]; }
+  n5 [label="Rule"]
+  n2 -> n5
+  n6 [label="Rules"]
+  n2 -> n6
+  { rank=same; n5 -> n6 [style=invis]; }
+  n7 [shape=box,label="NonTerminal (3, 1)-(3, 2): T"]
+  n3 -> n7
+  n8 [shape=box,label="Comma (3, 2)-(3, 3): ,"]
+  n4 -> n8
+  n9 [label="NonterminalDecl"]
+  n4 -> n9
+  n10 [label="Declaration1"]
+  n4 -> n10
+  { rank=same; n8 -> n9 -> n10 [style=invis]; }
+  n11 [shape=box,label="LeftAngle (4, 1)-(4, 2): <"]
+  n5 -> n11
+  n12 [shape=box,label="NonTerminal (4, 3)-(4, 4): E"]
+  n5 -> n12
+  n13 [label="Alternatives"]
+  n5 -> n13
+  n14 [shape=box,label="RightAngle (4, 13)-(4, 14): >"]
+  n5 -> n14
+  { rank=same; n11 -> n12 -> n13 -> n14 [style=invis]; }
+  n15 [label="Rule"]
+  n6 -> n15
+  n16 [label="Rules"]
+  n6 -> n16
+  { rank=same; n15 -> n16 [style=invis]; }
+  n17 [shape=box,label="NonTerminal (3, 4)-(3, 6): T'"]
+  n9 -> n17
+  n18 [shape=box,label="Comma (3, 6)-(3, 7): ,"]
+  n10 -> n18
+  n19 [label="NonterminalDecl"]
+  n10 -> n19
+  n20 [label="Declaration1"]
+  n10 -> n20
+  { rank=same; n18 -> n19 -> n20 [style=invis]; }
+  n21 [label="Alternative"]
+  n13 -> n21
+  n22 [label="Alternatives1"]
+  n13 -> n22
+  { rank=same; n21 -> n22 [style=invis]; }
+  n23 [shape=box,label="LeftAngle (5, 1)-(5, 2): <"]
+  n15 -> n23
+  n24 [shape=box,label="NonTerminal (5, 3)-(5, 5): E'"]
+  n15 -> n24
+  n25 [label="Alternatives"]
+  n15 -> n25
+  n26 [shape=box,label="RightAngle (5, 21)-(5, 22): >"]
+  n15 -> n26
+  { rank=same; n23 -> n24 -> n25 -> n26 [style=invis]; }
+  n27 [label="Rule"]
+  n16 -> n27
+  n28 [label="Rules"]
+  n16 -> n28
+  { rank=same; n27 -> n28 [style=invis]; }
+  n29 [shape=box,label="LeftBrace (3, 8)-(3, 9): {"]
+  n19 -> n29
+  n30 [shape=box,label="NonTerminal (3, 10)-(3, 11): E"]
+  n19 -> n30
+  n31 [shape=box,label="RightBrace (3, 12)-(3, 13): }"]
+  n19 -> n31
+  { rank=same; n29 -> n30 -> n31 [style=invis]; }
+  n32 [shape=box,label="Comma (3, 13)-(3, 14): ,"]
+  n20 -> n32
+  n33 [label="NonterminalDecl"]
+  n20 -> n33
+  n34 [label="Declaration1"]
+  n20 -> n34
+  { rank=same; n32 -> n33 -> n34 [style=invis]; }
+  n35 [shape=box,label="Colon (4, 6)-(4, 7): :"]
+  n21 -> n35
+  n36 [label="Terms"]
+  n21 -> n36
+  { rank=same; n35 -> n36 [style=invis]; }
+  n37 [label="Alternative"]
+  n25 -> n37
+  n38 [label="Alternatives1"]
+  n25 -> n38
+  { rank=same; n37 -> n38 [style=invis]; }
+  n39 [shape=box,label="LeftAngle (6, 1)-(6, 2): <"]
+  n27 -> n39
+  n40 [shape=box,label="NonTerminal (6, 3)-(6, 4): T"]
+  n27 -> n40
+  n41 [label="Alternatives"]
+  n27 -> n41
+  n42 [shape=box,label="RightAngle (6, 13)-(6, 14): >"]
+  n27 -> n42
+  { rank=same; n39 -> n40 -> n41 -> n42 [style=invis]; }
+  n43 [label="Rule"]
+  n28 -> n43
+  n44 [label="Rules"]
+  n28 -> n44
+  { rank=same; n43 -> n44 [style=invis]; }
+  n45 [shape=box,label="NonTerminal (3, 15)-(3, 17): E'"]
+  n33 -> n45
+  n46 [shape=box,label="Comma (3, 17)-(3, 18): ,"]
+  n34 -> n46
+  n47 [label="NonterminalDecl"]
+  n34 -> n47
+  n48 [label="Declaration1"]
+  n34 -> n48
+  { rank=same; n46 -> n47 -> n48 [style=invis]; }
+  n49 [label="Term"]
+  n36 -> n49
+  n50 [label="Terms1"]
+  n36 -> n50
+  { rank=same; n49 -> n50 [style=invis]; }
+  n51 [shape=box,label="Colon (5, 6)-(5, 7): :"]
+  n37 -> n51
+  n52 [label="Terms"]
+  n37 -> n52
+  { rank=same; n51 -> n52 [style=invis]; }
+  n53 [label="Alternatives"]
+  n38 -> n53
+  n54 [label="Alternative"]
+  n41 -> n54
+  n55 [label="Alternatives1"]
+  n41 -> n55
+  { rank=same; n54 -> n55 [style=invis]; }
+  n56 [shape=box,label="LeftAngle (7, 1)-(7, 2): <"]
+  n43 -> n56
+  n57 [shape=box,label="NonTerminal (7, 3)-(7, 5): T'"]
+  n43 -> n57
+  n58 [label="Alternatives"]
+  n43 -> n58
+  n59 [shape=box,label="RightAngle (7, 21)-(7, 22): >"]
+  n43 -> n59
+  { rank=same; n56 -> n57 -> n58 -> n59 [style=invis]; }
+  n60 [label="Rule"]
+  n44 -> n60
+  n61 [label="Rules"]
+  n44 -> n61
+  { rank=same; n60 -> n61 [style=invis]; }
+  n62 [shape=box,label="NonTerminal (3, 19)-(3, 20): F"]
+  n47 -> n62
+  n63 [shape=box,label="NonTerminal (4, 8)-(4, 9): T"]
+  n49 -> n63
+  n64 [label="Terms"]
+  n50 -> n64
+  n65 [label="Term"]
+  n52 -> n65
+  n66 [label="Terms1"]
+  n52 -> n66
+  { rank=same; n65 -> n66 [style=invis]; }
+  n67 [label="Alternative"]
+  n53 -> n67
+  n68 [label="Alternatives1"]
+  n53 -> n68
+  { rank=same; n67 -> n68 [style=invis]; }
+  n69 [shape=box,label="Colon (6, 6)-(6, 7): :"]
+  n54 -> n69
+  n70 [label="Terms"]
+  n54 -> n70
+  { rank=same; n69 -> n70 [style=invis]; }
+  n71 [label="Alternative"]
+  n58 -> n71
+  n72 [label="Alternatives1"]
+  n58 -> n72
+  { rank=same; n71 -> n72 [style=invis]; }
+  n73 [shape=box,label="LeftAngle (8, 1)-(8, 2): <"]
+  n60 -> n73
+  n74 [shape=box,label="NonTerminal (8, 3)-(8, 4): F"]
+  n60 -> n74
+  n75 [label="Alternatives"]
+  n60 -> n75
+  n76 [shape=box,label="RightAngle (8, 24)-(8, 25): >"]
+  n60 -> n76
+  { rank=same; n73 -> n74 -> n75 -> n76 [style=invis]; }
+  n77 [label="Term"]
+  n64 -> n77
+  n78 [label="Terms1"]
+  n64 -> n78
+  { rank=same; n77 -> n78 [style=invis]; }
+  n79 [shape=box,label="Terminal (5, 9)-(5, 10): +"]
+  n65 -> n79
+  n80 [label="Terms"]
+  n66 -> n80
+  n81 [shape=box,label="Colon (5, 17)-(5, 18): :"]
+  n67 -> n81
+  n82 [label="Terms"]
+  n67 -> n82
+  { rank=same; n81 -> n82 [style=invis]; }
+  n83 [label="Term"]
+  n70 -> n83
+  n84 [label="Terms1"]
+  n70 -> n84
+  { rank=same; n83 -> n84 [style=invis]; }
+  n85 [shape=box,label="Colon (7, 6)-(7, 7): :"]
+  n71 -> n85
+  n86 [label="Terms"]
+  n71 -> n86
+  { rank=same; n85 -> n86 [style=invis]; }
+  n87 [label="Alternatives"]
+  n72 -> n87
+  n88 [label="Alternative"]
+  n75 -> n88
+  n89 [label="Alternatives1"]
+  n75 -> n89
+  { rank=same; n88 -> n89 [style=invis]; }
+  n90 [shape=box,label="NonTerminal (4, 10)-(4, 12): E'"]
+  n77 -> n90
+  n91 [label="Term"]
+  n80 -> n91
+  n92 [label="Terms1"]
+  n80 -> n92
+  { rank=same; n91 -> n92 [style=invis]; }
+  n93 [label="Term"]
+  n82 -> n93
+  n94 [label="Terms1"]
+  n82 -> n94
+  { rank=same; n93 -> n94 [style=invis]; }
+  n95 [shape=box,label="NonTerminal (6, 8)-(6, 9): F"]
+  n83 -> n95
+  n96 [label="Terms"]
+  n84 -> n96
+  n97 [label="Term"]
+  n86 -> n97
+  n98 [label="Terms1"]
+  n86 -> n98
+  { rank=same; n97 -> n98 [style=invis]; }
+  n99 [label="Alternative"]
+  n87 -> n99
+  n100 [label="Alternatives1"]
+  n87 -> n100
+  { rank=same; n99 -> n100 [style=invis]; }
+  n101 [shape=box,label="Colon (8, 6)-(8, 7): :"]
+  n88 -> n101
+  n102 [label="Terms"]
+  n88 -> n102
+  { rank=same; n101 -> n102 [style=invis]; }
+  n103 [label="Alternatives"]
+  n89 -> n103
+  n104 [shape=box,label="NonTerminal (5, 12)-(5, 13): T"]
+  n91 -> n104
+  n105 [label="Terms"]
+  n92 -> n105
+  n106 [shape=box,label="Eps (5, 19)-(5, 20): @"]
+  n93 -> n106
+  n107 [label="Term"]
+  n96 -> n107
+  n108 [label="Terms1"]
+  n96 -> n108
+  { rank=same; n107 -> n108 [style=invis]; }
+  n109 [shape=box,label="Terminal (7, 9)-(7, 10): *"]
+  n97 -> n109
+  n110 [label="Terms"]
+  n98 -> n110
+  n111 [shape=box,label="Colon (7, 17)-(7, 18): :"]
+  n99 -> n111
+  n112 [label="Terms"]
+  n99 -> n112
+  { rank=same; n111 -> n112 [style=invis]; }
+  n113 [label="Term"]
+  n102 -> n113
+  n114 [label="Terms1"]
+  n102 -> n114
+  { rank=same; n113 -> n114 [style=invis]; }
+  n115 [label="Alternative"]
+  n103 -> n115
+  n116 [label="Alternatives1"]
+  n103 -> n116
+  { rank=same; n115 -> n116 [style=invis]; }
+  n117 [label="Term"]
+  n105 -> n117
+  n118 [label="Terms1"]
+  n105 -> n118
+  { rank=same; n117 -> n118 [style=invis]; }
+  n119 [shape=box,label="NonTerminal (6, 10)-(6, 12): T'"]
+  n107 -> n119
+  n120 [label="Term"]
+  n110 -> n120
+  n121 [label="Terms1"]
+  n110 -> n121
+  { rank=same; n120 -> n121 [style=invis]; }
+  n122 [label="Term"]
+  n112 -> n122
+  n123 [label="Terms1"]
+  n112 -> n123
+  { rank=same; n122 -> n123 [style=invis]; }
+  n124 [shape=box,label="Terminal (8, 9)-(8, 10): n"]
+  n113 -> n124
+  n125 [shape=box,label="Colon (8, 12)-(8, 13): :"]
+  n115 -> n125
+  n126 [label="Terms"]
+  n115 -> n126
+  { rank=same; n125 -> n126 [style=invis]; }
+  n127 [shape=box,label="NonTerminal (5, 14)-(5, 16): E'"]
+  n117 -> n127
+  n128 [shape=box,label="NonTerminal (7, 12)-(7, 13): F"]
+  n120 -> n128
+  n129 [label="Terms"]
+  n121 -> n129
+  n130 [shape=box,label="Eps (7, 19)-(7, 20): @"]
+  n122 -> n130
+  n131 [label="Term"]
+  n126 -> n131
+  n132 [label="Terms1"]
+  n126 -> n132
+  { rank=same; n131 -> n132 [style=invis]; }
+  n133 [label="Term"]
+  n129 -> n133
+  n134 [label="Terms1"]
+  n129 -> n134
+  { rank=same; n133 -> n134 [style=invis]; }
+  n135 [shape=box,label="Terminal (8, 15)-(8, 16): ("]
+  n131 -> n135
+  n136 [label="Terms"]
+  n132 -> n136
+  n137 [shape=box,label="NonTerminal (7, 14)-(7, 16): T'"]
+  n133 -> n137
+  n138 [label="Term"]
+  n136 -> n138
+  n139 [label="Terms1"]
+  n136 -> n139
+  { rank=same; n138 -> n139 [style=invis]; }
+  n140 [shape=box,label="NonTerminal (8, 18)-(8, 19): E"]
+  n138 -> n140
+  n141 [label="Terms"]
+  n139 -> n141
+  n142 [label="Term"]
+  n141 -> n142
+  n143 [label="Terms1"]
+  n141 -> n143
+  { rank=same; n142 -> n143 [style=invis]; }
+  n144 [shape=box,label="Terminal (8, 21)-(8, 22): )"]
+  n142 -> n144
+}

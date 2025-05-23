@@ -1,0 +1,26 @@
+Program ::= Declaration Rules
+Declaration ::= NonterminalDecl Declaration1
+Declaration1 ::= COMMA NonterminalDecl Declaration1 | ε
+NonterminalDecl ::= NONTERMINAL | LEFT_BRACE NONTERMINAL RIGHT_BRACE
+Rules ::= Rule Rules | ε
+Rule ::= LEFT_ANGLE NONTERMINAL Alternatives RIGHT_ANGLE
+Alternatives ::= Alternative Alternatives1
+Alternatives1 ::= Alternatives | ε
+Alternative ::= COLON Terms
+Terms ::= Term Terms1
+Terms1 ::= Terms | ε
+Term ::= TERMINAL | NONTERMINAL | EPS
+
+{ Program }, Declaration, Rules, NonterminalDecl, Declaration1, Rule, Alternatives, Alternative, Alternatives1, Terms, Term, Terms1
+< Program : Declaration Rules >
+< Declaration : NonterminalDecl Declaration1 >
+< Declaration1 : "," NonterminalDecl Declaration1 : @ >
+< NonterminalDecl : "NONTERMINAL" : "{" "NONTERMINAL" "}" >
+< Rules : Rule Rules : @ >
+< Rule : "<" "NONTERMINAL" Alternatives ">" >
+< Alternatives : Alternative Alternatives1 >
+< Alternatives1 : Alternatives : @ >
+< Alternative : ":" Terms >
+< Terms : Term Terms1 >
+< Terms1 : Terms : @ >
+< Term : "TERMINAL" : "NONTERMINAL" : "@" >
