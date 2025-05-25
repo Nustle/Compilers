@@ -14,7 +14,7 @@ add_executable(generator main.cpp
         src/lexer/position.cpp
         src/parser/parser.cpp
         src/parser/node.cpp
-        src/parser/analyzer_table.cpp
+        src/parser/table.cpp
         src/semantics/ast.cpp
         src/semantics/table_generator.cpp
 )

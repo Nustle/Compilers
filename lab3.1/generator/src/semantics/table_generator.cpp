@@ -1,5 +1,4 @@
 #include "include/semantics/table_generator.h"
-#include <filesystem>
 #include <fstream>
 
 namespace semantics {
@@ -154,13 +153,12 @@ namespace semantics {
         }
     }
 
-    void TableGenerator::Generate(const std::string& out_dir) const {
-        std::filesystem::create_directories(out_dir);
-        std::ofstream ofs(out_dir);
+    void TableGenerator::Generate(const std::string& out_path) const {
+        std::ofstream ofs(out_path);
 
-        ofs << "#include \"include/parser/analyzer_table.h\"\n\n";
+        ofs << "#include \"include/parser/table.h\"\n\n";
         ofs << "namespace parser {\n\n";
-        ofs << "AnalyzerTable::AnalyzerTable()\n"
+        ofs << "Table::Table()\n"
                ": axiom({\"" << GetAxiom().GetName() << "\", Symbol::Type::"
             << (GetAxiom().GetType() == parser::Symbol::Type::NonTerminal ? "NonTerminal" : "Terminal")
             << "}),\n  table({\n";

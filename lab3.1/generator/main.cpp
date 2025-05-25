@@ -32,7 +32,7 @@ int main() {
     try {
         const string& self_grammar_path = "/Users/adilismailov/Desktop/ИУ9-62Б/Компиляторы/lab3.1/generator/example/self_program.txt";
         const string& self_tree_path = "/Users/adilismailov/Desktop/ИУ9-62Б/Компиляторы/lab3.1/generator/output/self_tree.txt";
-        const string& self_table_path = "/Users/adilismailov/Desktop/ИУ9-62Б/Компиляторы/lab3.1/generator/src/parser/analyzer_table.cpp";
+        const string& self_table_path = "/Users/adilismailov/Desktop/ИУ9-62Б/Компиляторы/lab3.1/generator/src/parser/table.cpp";
         GenerateCompiler(self_grammar_path, self_tree_path, self_table_path);
 
         const string& grammar_path = "/Users/adilismailov/Desktop/ИУ9-62Б/Компиляторы/lab3.1/generator/example/program.txt";
