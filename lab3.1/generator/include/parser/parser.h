@@ -3,7 +3,7 @@
 
 #include "include/parser/node.h"
 #include "include/lexer/scanner.h"
-#include "include/parser/analyzer_table.h"
+#include "include/parser/table.h"
 
 namespace parser {
 
@@ -12,8 +12,8 @@ namespace parser {
         std::unique_ptr<Node> TopDownParse(lexer::Scanner *scanner);
 
     private:
-        AnalyzerTable table = {
-            #include "include/parser/analyzer_table.h"
+        Table table = {
+            #include "include/parser/table.h"
         };
     };
 }
