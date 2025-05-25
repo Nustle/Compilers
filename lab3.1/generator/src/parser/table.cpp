@@ -1,8 +1,8 @@
-#include "include/parser/analyzer_table.h"
+#include "include/parser/table.h"
 
 namespace parser {
 
-AnalyzerTable::AnalyzerTable()
+Table::Table()
 : axiom({"Program", Symbol::Type::NonTerminal}),
   table({
     {{"Term", Symbol::Type::NonTerminal}, {
