@@ -8,12 +8,12 @@
 
 namespace parser {
 
-    class AnalyzerTable {
+    class Table {
         Symbol axiom;
         std::unordered_map<Symbol, std::unordered_map<Symbol, std::vector<Symbol>> > table;
 
     public:
-        AnalyzerTable();
+        Table();
 
         const Symbol& GetAxiom() const {
             return axiom;
