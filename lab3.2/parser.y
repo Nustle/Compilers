@@ -11,7 +11,6 @@
 
 %lex-param {yyscan_t scanner}
 %parse-param {yyscan_t scanner}
-%parse-param {long env[26]}
 %parse-param {int space}
 %parse-param {bool first_elem_in_rhs}
 %parse-param {bool has_rep}
@@ -28,7 +27,7 @@
 
 %{
 int yylex(YYSTYPE *yylval_param, YYLTYPE *yylloc_param, yyscan_t scanner);
-void yyerror(YYLTYPE *loc, yyscan_t scanner, long env[26], int space, bool first_elem_in_rhs, bool has_rep, bool stitching, const char *message);
+void yyerror(YYLTYPE *loc, yyscan_t scanner, int space, bool first_elem_in_rhs, bool has_rep, bool stitching, const char *message);
 
 void print_spaces(int space) {
     for(int i = 0; i < space; i++) {
@@ -247,7 +246,6 @@ AxiomPart:
 
 int main(int argc, char *argv[]) {
     FILE *input = 0;
-    long env[26] = { 0 };
     int space = 0;
     bool first_elem_in_rhs = false;
     bool has_rep = false;
@@ -267,7 +265,7 @@ int main(int argc, char *argv[]) {
     }
 
     init_scanner(input, &scanner, &extra);
-    yyparse(scanner, env, space, first_elem_in_rhs, has_rep, stitching);
+    yyparse(scanner, space, first_elem_in_rhs, has_rep, stitching);
     destroy_scanner(scanner);
 
     if (input != stdin) {
