@@ -1,0 +1,32 @@
+Program → Defs Funcs
+Defs → ε | Defs Def
+
+Def → type IDENT : Alternatives .
+Alternatives → AlgType | Alternatives "|" AlgType
+AlgType → IDENT Types
+Types → ε | Types Type
+Type → ElementaryType | IDENT
+ElementaryType → INT_CONST
+
+Funcs → ε | Funcs FunDef
+FunDef → fun FunSignature : Clauses .
+FunSignature → "(" IDENT Types ")" "->" Type
+
+Clauses → Clause | Clauses "|" Clause
+Clause → FunctionPattern -> Expression
+
+FunctionPattern → "(" IDENT FuncParameters ")"
+
+FuncParameters → ε | FuncParameters FuncParameter
+FuncParameter → IDENT | ListParam
+
+ListParam → "[" IDENT FuncParameters "]"
+Expression → IDENT | Const | FuncCall | ListCall
+Const → INT_CONST
+
+FuncCall → "(" Func Expressions ")"
+Func → "+" | "*" | IDENT
+
+Expressions → ε | Expressions Expression
+
+ListCall → "[" IDENT Expressions "]"
